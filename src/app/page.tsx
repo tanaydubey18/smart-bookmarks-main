@@ -10,6 +10,7 @@ import { ArrowRight, Bookmark, Layers, Zap, LayoutDashboard } from "lucide-react
 
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { Footer } from "@/components/Footer";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 export default function HomePage() {
@@ -58,7 +59,7 @@ export default function HomePage() {
   );
 
   return (
-    <main ref={container} className="min-h-screen bg-background text-foreground">
+    <main ref={container} className="min-h-screen flex flex-col bg-background text-foreground">
       {/* Header */}
       <header className="sticky top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-xl bg-slate-400/10 border-b border-border/30">
         <div className="flex items-center gap-4">
@@ -89,7 +90,7 @@ export default function HomePage() {
       <section className="relative flex flex-col items-center justify-center min-h-[85vh] pt-32 pb-20 px-4 text-center">
         {/* Isometric Grid Background (Matching the cool 404/Login vibe) */}
         <div 
-          className="absolute inset-0 z-0 pointer-events-none opacity-[0.1]"
+          className="absolute inset-0 z-0 pointer-events-none opacity-[0.1] overflow-hidden"
           style={{
             perspective: "1000px",
             transformStyle: "preserve-3d",
@@ -132,7 +133,7 @@ export default function HomePage() {
                 </div>
                 <Link href={session ? "/dashboard" : "/login"}>
                   <Button size="lg" className="h-14 px-10 text-lg shadow-xl hover:shadow-primary/20 transition-all group">
-                      {session ? "Getting Started" : "Start Collecting"}
+                      {session ? "Getting Started" : "Start Exploring"}
                       <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
@@ -163,11 +164,7 @@ export default function HomePage() {
 
 
       {/* Footer */}
-      <footer className="relative z-20 border-t border-border bg-background py-12 text-center text-sm text-muted-foreground">
-        <div className="max-w-5xl mx-auto px-6">
-          <p>© 2026 Smart Bookmarks. Built for productivity.</p>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
