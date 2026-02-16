@@ -7,11 +7,7 @@ const nextConfig: NextConfig = {
    * This prevents it from trying to resolve dependencies
    * like `tailwindcss` from the parent `Astrabit` folder.
    */
-  experimental: {
-    turbo: {
-      root: __dirname,
-    },
-  },
+
 };
 
 export default nextConfig;

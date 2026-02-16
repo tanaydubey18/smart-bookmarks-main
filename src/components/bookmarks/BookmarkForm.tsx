@@ -2,72 +2,90 @@
 
 import { useState } from "react";
 
-import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
+import type { Bookmark } from "@/types/bookmark";
+import { createSupabaseBrowserClient } from "@/lib/supabase/client";
+import { validateBookmarkInput } from "@/lib/validators";
+import { DynamicInput } from "@/components/ui/DynamicInput";
 
 interface BookmarkFormProps {
-  onCreate: (payload: { title: string; url: string }) => Promise<void>;
+  userId: string;
+  onOptimisticAdd: (bookmark: Bookmark) => void;
 }
 
 /**
  * Client-side form for creating bookmarks.
- * Delegates the actual creation to a server action passed via `onCreate`.
+ * Inserts directly via Supabase client + optimistic UI for instant feedback.
  */
-export function BookmarkForm({ onCreate }: BookmarkFormProps) {
+export function BookmarkForm({ userId, onOptimisticAdd }: BookmarkFormProps) {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = async () => {
     setError(null);
+
+    // Client-side validation
+    let payload: { title: string; url: string };
+    try {
+      payload = validateBookmarkInput({ title, url });
+    } catch (err: any) {
+      setError(err.message);
+      return;
+    }
+
     setLoading(true);
 
+    // Create an optimistic bookmark with a temp ID
+    const optimisticBookmark: Bookmark = {
+      id: crypto.randomUUID(),
+      user_id: userId,
+      title: payload.title,
+      url: payload.url,
+      created_at: new Date().toISOString(),
+    };
+
+    // Show it immediately
+    onOptimisticAdd(optimisticBookmark);
+    setTitle("");
+    setUrl("");
+
     try {
-      await onCreate({ title, url });
-      setTitle("");
-      setUrl("");
-    } catch (err: any) {
-      const message =
-        typeof err?.message === "string"
-          ? err.message
-          : "Something went wrong while creating the bookmark.";
-      setError(message);
+      const supabase = createSupabaseBrowserClient();
+
+      const { error: insertError } = await supabase.from("bookmarks").insert({
+        title: payload.title,
+        url: payload.url,
+        user_id: userId,
+      });
+
+      if (insertError) {
+        setError("Failed to save bookmark. Please try again.");
+        console.error("Insert error:", insertError.message);
+      }
+    } catch (err) {
+      setError("Something went wrong.");
+      console.error("Insert error:", err);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-        <div className="flex-1 space-y-2">
-          <Input
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <Input
-            placeholder="https://example.com/article"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
-        </div>
-        <Button
-          type="submit"
-          className="mt-2 w-full sm:mt-0 sm:w-auto"
-          loading={loading}
-        >
-          Add
-        </Button>
-      </div>
+    <div className="space-y-4">
+      <DynamicInput 
+        title={title}
+        setTitle={setTitle}
+        url={url}
+        setUrl={setUrl}
+        onSubmit={handleSubmit}
+        loading={loading}
+      />
       {error ? (
-        <p className="text-xs text-red-600" role="alert">
+        <p className="text-xs text-red-600 px-4 animate-in fade-in slide-in-from-top-1" role="alert">
           {error}
         </p>
       ) : null}
-    </form>
+    </div>
   );
 }
-
