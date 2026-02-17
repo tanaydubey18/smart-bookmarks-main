@@ -3,20 +3,20 @@
 @plugin "tailwindcss-animate";
 
 :root {
-  /* Cotton, Electric Blue, Moonless Night Palette */
-  --background: #F4F3F1;
+  /* High-Contrast White & Electric Blue Palette */
+  --background: #ffffff;
   --foreground: #2D2D2D;
 
   /* Primary: Electric Blue */
   --primary: #3171C6;
-  --primary-foreground: #F4F3F1;
+  --primary-foreground: #ffffff;
 
-  /* Secondary: Subtle grayish white */
-  --secondary: #eaeaeb;
-  --secondary-foreground: #2D2D2D;
+  /* Secondary: Clean slate gray/blue */
+  --secondary: #f1f5f9;
+  --secondary-foreground: #1e293b;
 
-  /* Accent: Electric Blue tint */
-  --accent: #dbeafe;
+  /* Accent: Light blue tint */
+  --accent: #eff6ff;
   --accent-foreground: #3171C6;
 
   --muted: #edf1f3;

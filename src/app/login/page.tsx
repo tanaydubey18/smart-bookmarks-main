@@ -47,7 +47,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center bg-[#F4F3F1] overflow-hidden px-6">
+    <main className="relative flex min-h-screen flex-col items-center justify-center bg-white overflow-hidden px-6">
       {/* 1. Isometric Grid Background (Restored for vibrancy) */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.07] overflow-hidden"
