@@ -34,6 +34,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${patrickHand.variable} antialiased`}
+        suppressHydrationWarning
       >
         <CustomCursor />
         <SmoothScroll />
