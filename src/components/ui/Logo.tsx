@@ -12,10 +12,10 @@ export function Logo() {
     >
       <div className="relative h-10 w-10 overflow-hidden rounded-lg transition-transform duration-300 group-hover:scale-105">
         <Image 
-          src="/logo.png" 
+          src="/logo-v2.png" 
           alt="Smart Bookmarks Logo" 
           fill 
-          className="object-contain dark:invert"
+          className="object-contain"
           priority
         />
       </div>
