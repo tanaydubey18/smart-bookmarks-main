@@ -65,8 +65,8 @@ export default function LoginPage() {
         />
       </div>
 
-      {/* 2. Floating Butterfly Decoration (Approved organic touch) */}
-      <div className="absolute top-10 right-10 md:top-20 md:right-20 w-40 h-40 md:w-56 md:h-56 rotate-[12deg] pointer-events-none opacity-90 z-20 select-none animate-in fade-in zoom-in-50 duration-1000">
+      {/* 2. Floating Butterfly Decoration (Repositioned closer to card) */}
+      <div className="absolute top-[15%] right-[10%] md:right-[25%] -translate-y-1/2 w-40 h-40 md:w-48 md:h-48 rotate-[12deg] pointer-events-none opacity-90 z-20 select-none animate-in fade-in zoom-in-50 duration-1000">
         <Image 
           src="/butterfly.png" 
           alt="Decorative Butterfly" 
@@ -76,7 +76,7 @@ export default function LoginPage() {
         />
       </div>
 
-      <div className="w-full max-w-[440px] relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+      <div className="w-full max-w-[440px] relative z-10 -translate-y-6 animate-in fade-in slide-in-from-bottom-12 duration-1000">
         {/* Navigation */}
         <div className="flex justify-start mb-8">
           <Link href="/">
@@ -87,8 +87,8 @@ export default function LoginPage() {
           </Link>
         </div>
 
-        {/* Glassmorphism Card (Restored) */}
-        <div className="relative p-8 md:p-10 rounded-[32px] border border-white/40 bg-white/70 backdrop-blur-2xl shadow-2xl shadow-blue-500/5">
+        {/* Glassmorphism Card (Refined with lift and stronger shadow) */}
+        <div className="relative p-8 md:p-10 rounded-[32px] border border-slate-100 bg-white shadow-[0_50px_100px_-20px_rgba(55,124,205,0.15)]">
           {/* Header Section */}
           <div className="flex flex-col items-center text-center space-y-6">
             <div className="p-3 bg-white rounded-2xl shadow-sm border border-gray-100">
