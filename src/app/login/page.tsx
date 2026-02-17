@@ -47,7 +47,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center bg-[#fdfcfb] overflow-hidden px-6">
+    <main className="relative flex min-h-screen flex-col items-center justify-center bg-[#F4F3F1] overflow-hidden px-6">
       {/* 1. Isometric Grid Background (Restored for vibrancy) */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-[0.07] overflow-hidden"
@@ -80,7 +80,7 @@ export default function LoginPage() {
         {/* Navigation */}
         <div className="flex justify-start mb-8">
           <Link href="/">
-            <button className="group flex items-center text-sm font-semibold text-gray-400 hover:text-[#0055ff] transition-all">
+            <button className="group flex items-center text-sm font-semibold text-gray-400 hover:text-[#3171C6] transition-all">
               <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
               Return home
             </button>
@@ -112,7 +112,7 @@ export default function LoginPage() {
 
             <Button 
               variant="primary" 
-              className="w-full h-14 flex items-center justify-center gap-4 bg-[#0055ff] hover:bg-[#0044cc] text-white transition-all font-bold text-base rounded-[20px] active:scale-[0.97] border-none shadow-xl shadow-blue-500/25 group"
+              className="w-full h-14 flex items-center justify-center gap-4 bg-[#3171C6] hover:bg-[#2a61aa] text-white transition-all font-bold text-base rounded-[20px] active:scale-[0.97] border-none shadow-xl shadow-blue-500/25 group"
               onClick={startGoogleLogin}
               loading={isLoggingIn}
             >
@@ -131,8 +131,8 @@ export default function LoginPage() {
             {/* Feature Pills */}
             <div className="flex items-center justify-center gap-4">
               <div className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50/50 rounded-full border border-blue-100/50">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#0055ff]" />
-                <span className="text-[10px] uppercase tracking-wider font-bold text-[#0055ff]/70">Secure</span>
+                <ShieldCheck className="h-3.5 w-3.5 text-[#3171C6]" />
+                <span className="text-[10px] uppercase tracking-wider font-bold text-[#3171C6]/70">Secure</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50/50 rounded-full border border-amber-100/50">
                 <Zap className="h-3.5 w-3.5 text-amber-500" />
@@ -143,7 +143,7 @@ export default function LoginPage() {
             {/* Footer Text */}
             <div className="pt-4 text-center border-t border-gray-100">
               <p className="text-[11px] text-gray-400 font-medium leading-relaxed">
-                By signing in, you agree to our <span className="text-gray-900 border-b border-gray-200 hover:border-[#0055ff] cursor-pointer">Terms</span> and <span className="text-gray-900 border-b border-gray-200 hover:border-[#0055ff] cursor-pointer">Privacy</span>.
+                By signing in, you agree to our <span className="text-gray-900 border-b border-gray-200 hover:border-[#3171C6] cursor-pointer">Terms</span> and <span className="text-gray-900 border-b border-gray-200 hover:border-[#3171C6] cursor-pointer">Privacy</span>.
                 <br />
                 Your data is protected and kept private.
               </p>
