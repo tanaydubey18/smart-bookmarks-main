@@ -88,7 +88,7 @@ export default function LoginPage() {
         </div>
 
         {/* Glassmorphism Card (Refined with lift and stronger shadow) */}
-        <div className="relative p-8 md:p-10 rounded-[32px] border border-slate-100 bg-white shadow-[0_50px_100px_-20px_rgba(55,124,205,0.15)]">
+        <div className="relative p-8 md:p-10 rounded-[32px] border border-slate-100 bg-white shadow-[0_60px_120px_-20px_rgba(55,124,205,0.2)]">
           {/* Header Section */}
           <div className="flex flex-col items-center text-center space-y-6">
             <div className="p-3 bg-white rounded-2xl shadow-sm border border-gray-100">
