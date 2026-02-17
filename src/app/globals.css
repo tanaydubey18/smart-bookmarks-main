@@ -8,7 +8,7 @@
   --foreground: #2D2D2D;
 
   /* Primary: Electric Blue */
-  --primary: #3171C6;
+  --primary: #377CCD;
   --primary-foreground: #ffffff;
 
   /* Secondary: Clean slate gray/blue */
@@ -17,7 +17,7 @@
 
   /* Accent: Light blue tint */
   --accent: #eff6ff;
-  --accent-foreground: #3171C6;
+  --accent-foreground: #377CCD;
 
   --muted: #fbfbfc;
   --muted-foreground: #6b7280;
@@ -107,11 +107,11 @@ a, button, input, [role="button"] {
 
 
   .premium-shadow {
-    box-shadow: 0 10px 30px -10px rgba(49, 113, 198, 0.1);
+    box-shadow: 0 10px 30px -10px rgba(55, 124, 205, 0.1);
   }
 
   .premium-shadow-hover {
-    box-shadow: 0 20px 40px -12px rgba(49, 113, 198, 0.25);
+    box-shadow: 0 20px 40px -12px rgba(55, 124, 205, 0.25);
   }
 
 
@@ -148,8 +148,8 @@ a, button, input, [role="button"] {
 
   .bg-grid {
     background-image: 
-      linear-gradient(to right, rgba(49, 113, 198, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(49, 113, 198, 0.03) 1px, transparent 1px);
+      linear-gradient(to right, rgba(55, 124, 205, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(55, 124, 205, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
@@ -161,9 +161,9 @@ a, button, input, [role="button"] {
 
   .bookmark-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px -12px rgba(49, 113, 198, 0.15);
+    box-shadow: 0 20px 40px -12px rgba(55, 124, 205, 0.15);
     background-color: var(--background);
-    border-color: rgba(49, 113, 198, 0.2);
+    border-color: rgba(55, 124, 205, 0.2);
   }
 
 }

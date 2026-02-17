@@ -80,7 +80,7 @@ export default function LoginPage() {
         {/* Navigation */}
         <div className="flex justify-start mb-8">
           <Link href="/">
-            <button className="group flex items-center text-sm font-semibold text-gray-400 hover:text-[#3171C6] transition-all">
+            <button className="group flex items-center text-sm font-semibold text-gray-400 hover:text-[#377CCD] transition-all">
               <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
               Return home
             </button>
@@ -112,7 +112,7 @@ export default function LoginPage() {
 
             <Button 
               variant="primary" 
-              className="w-full h-14 flex items-center justify-center gap-4 bg-[#3171C6] hover:bg-[#2a61aa] text-white transition-all font-bold text-base rounded-[20px] active:scale-[0.97] border-none shadow-xl shadow-blue-500/25 group"
+              className="w-full h-14 flex items-center justify-center gap-4 bg-[#377CCD] hover:bg-[#2e68ab] text-white transition-all font-bold text-base rounded-[20px] active:scale-[0.97] border-none shadow-xl shadow-blue-500/25 group"
               onClick={startGoogleLogin}
               loading={isLoggingIn}
             >
@@ -131,8 +131,8 @@ export default function LoginPage() {
             {/* Feature Pills */}
             <div className="flex items-center justify-center gap-4">
               <div className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50/50 rounded-full border border-blue-100/50">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#3171C6]" />
-                <span className="text-[10px] uppercase tracking-wider font-bold text-[#3171C6]/70">Secure</span>
+                <ShieldCheck className="h-3.5 w-3.5 text-[#377CCD]" />
+                <span className="text-[10px] uppercase tracking-wider font-bold text-[#377CCD]/70">Secure</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50/50 rounded-full border border-amber-100/50">
                 <Zap className="h-3.5 w-3.5 text-amber-500" />
@@ -143,7 +143,7 @@ export default function LoginPage() {
             {/* Footer Text */}
             <div className="pt-4 text-center border-t border-gray-100">
               <p className="text-[11px] text-gray-400 font-medium leading-relaxed">
-                By signing in, you agree to our <span className="text-gray-900 border-b border-gray-200 hover:border-[#3171C6] cursor-pointer">Terms</span> and <span className="text-gray-900 border-b border-gray-200 hover:border-[#3171C6] cursor-pointer">Privacy</span>.
+                By signing in, you agree to our <span className="text-gray-900 border-b border-gray-200 hover:border-[#377CCD] cursor-pointer">Terms</span> and <span className="text-gray-900 border-b border-gray-200 hover:border-[#377CCD] cursor-pointer">Privacy</span>.
                 <br />
                 Your data is protected and kept private.
               </p>
