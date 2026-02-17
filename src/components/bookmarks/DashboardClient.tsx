@@ -15,7 +15,7 @@ interface DashboardClientProps {
  * Connects BookmarkForm → optimisticAdd and BookmarkList → optimisticRemove.
  */
 export function DashboardClient({ initialBookmarks, userId }: DashboardClientProps) {
-  const { bookmarks, optimisticAdd, optimisticRemove } = useBookmarksRealtime(initialBookmarks);
+  const { bookmarks, optimisticAdd, optimisticRemove } = useBookmarksRealtime(initialBookmarks, userId);
 
   return (
     <>

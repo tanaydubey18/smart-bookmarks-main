@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Trash2, ExternalLink } from "lucide-react";
@@ -67,9 +66,6 @@ export function BookmarkList({ bookmarks, onOptimisticRemove }: BookmarkListProp
   if (!bookmarks.length) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
-        <div className="rounded-full bg-muted/50 p-6 mb-4">
-          <ExternalLink className="h-10 w-10 text-muted-foreground/50" />
-        </div>
         <h3 className="text-xl font-bold font-patrick-hand">Your board is empty!</h3>
         <p className="mt-2 text-sm text-muted-foreground max-w-xs">
           Let&apos;s get things moving. Add your first bookmark above to see the magic.

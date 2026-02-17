@@ -80,7 +80,7 @@ export default function HomePage() {
             </>
           ) : (
             <Link href="/login">
-              <Button className="px-6">Sign In</Button>
+              <Button className="px-6">Sign Up</Button>
             </Link>
           )}
         </div>

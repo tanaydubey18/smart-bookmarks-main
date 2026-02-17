@@ -9,11 +9,11 @@ export function DashboardBackground() {
       <div className="absolute inset-0 bg-grid opacity-[0.4] dark:opacity-[0.1]" />
 
       {/* Decorative Sketch Elements on the left */}
-      <div className="fixed top-2/3 left-0 -translate-y-1/2 w-72 h-72 opacity-20 pointer-events-none select-none grayscale dark:invert lg:opacity-40 -translate-x-8 hover:translate-x-0 transition-transform duration-700">
+      <div className="fixed top-2/3 left-0 -translate-y-1/2 w-80 h-80 opacity-15 pointer-events-none select-none mix-blend-multiply dark:mix-blend-screen dark:invert lg:opacity-25 -translate-x-12 hover:translate-x-0 transition-transform duration-700">
         <div className="relative w-full h-full">
           <Image
-            src="/search-illustration.jpg"
-            alt="Search Illustration"
+            src="/bookmarks-empty.jpeg"
+            alt="Dashboard Illustration"
             fill
             className="object-contain"
             priority
@@ -22,7 +22,7 @@ export function DashboardBackground() {
       </div>
 
 
-      <div className="fixed bottom-0 right-0 w-72 h-72 opacity-20 pointer-events-none select-none grayscale dark:invert lg:opacity-40 translate-x-4 hover:translate-x-0 transition-transform duration-700">
+      <div className="fixed bottom-0 right-0 w-80 h-80 opacity-15 pointer-events-none select-none mix-blend-multiply dark:mix-blend-screen dark:invert lg:opacity-25 translate-x-8 hover:translate-x-0 transition-transform duration-700">
         <div className="relative w-full h-full">
           <Image
             src="/stack-of-books.jpg"

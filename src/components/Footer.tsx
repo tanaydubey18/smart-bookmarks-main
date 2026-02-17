@@ -10,7 +10,7 @@ export function Footer() {
           <Logo />
           <span className="text-muted-foreground hidden md:inline">•</span>
           <p className="text-sm text-muted-foreground">
-            © 2026 Smart Bookmarks. Built with <Heart className="inline h-3 w-3 text-red-500 fill-red-500" /> by <span className="text-foreground font-medium">Astrabit</span>
+            © 2026 Smart Bookmarks. Built with <Heart className="inline h-3 w-3 text-red-500 fill-red-500" /> by <span className="text-foreground font-medium">Tanishq Dubey</span>
           </p>
         </div>
 
