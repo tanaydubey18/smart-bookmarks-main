@@ -3,31 +3,31 @@
 @plugin "tailwindcss-animate";
 
 :root {
-  /* Premium Drafting Palette: Blue, White, Black */
-  --background: #ffffff;
+  /* Organic Modern Palette: Canvas, Mist, Cornflower, Pear, Black */
+  --background: #fbfbf8;
   --foreground: #000000;
 
-  /* Primary: Drafting Blue */
-  --primary: #0055ff;
+  /* Primary: Cornflower Blue (Friendly & Professional) */
+  --primary: #6aa6da;
   --primary-foreground: #ffffff;
 
-  /* Secondary: Very Light Blue/Gray */
-  --secondary: #f0f4ff;
-  --secondary-foreground: #002266;
+  /* Secondary: Mist (Soft backdrop) */
+  --secondary: #dbe3e9;
+  --secondary-foreground: #2d3748;
 
-  /* Accent: Electric Blue Tint */
-  --accent: #e6f0ff;
-  --accent-foreground: #0055ff;
+  /* Accent: Pear (Organic touch) */
+  --accent: #e1e5ac;
+  --accent-foreground: #2d3748;
 
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
+  --muted: #f2f5f7;
+  --muted-foreground: #4a5568;
 
   --card: #ffffff;
   --card-foreground: #000000;
 
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #0055ff;
+  --border: #dbe3e9;
+  --input: #dbe3e9;
+  --ring: #6aa6da;
 
   --radius: 0.75rem;
 
@@ -99,19 +99,19 @@ a, button, input, [role="button"] {
 
 @layer utilities {
   .glass {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(251, 251, 248, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(219, 227, 233, 0.3);
   }
 
 
   .premium-shadow {
-    box-shadow: 0 10px 30px -10px rgba(0, 85, 255, 0.1);
+    box-shadow: 0 10px 30px -10px rgba(106, 166, 218, 0.2);
   }
 
   .premium-shadow-hover {
-    box-shadow: 0 20px 40px -12px rgba(0, 85, 255, 0.25);
+    box-shadow: 0 20px 40px -12px rgba(106, 166, 218, 0.35);
   }
 
 
@@ -148,22 +148,22 @@ a, button, input, [role="button"] {
 
   .bg-grid {
     background-image: 
-      linear-gradient(to right, rgba(0, 85, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 85, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(106, 166, 218, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(106, 166, 218, 0.08) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
 
   .bookmark-card {
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border: 1px solid transparent;
+    border: 1px solid var(--border);
   }
 
   .bookmark-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px -12px rgba(0, 85, 255, 0.15);
+    box-shadow: 0 20px 40px -12px rgba(106, 166, 218, 0.2);
     background-color: var(--background);
-    border-color: rgba(0, 85, 255, 0.2);
+    border-color: var(--primary);
   }
 
 }
