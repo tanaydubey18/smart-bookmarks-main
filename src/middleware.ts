@@ -5,29 +5,13 @@ import { createServerClient } from '@supabase/ssr'
 
 export async function middleware(request: NextRequest) {
   // First, refresh the session
-  const response = await updateSession(request)
+  const { response, user } = await updateSession(request)
 
   const { pathname } = request.nextUrl
 
   // Create a supabase client to check auth status
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll()
-        },
-        setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) =>
-            request.cookies.set(name, value)
-          )
-        },
-      },
-    }
-  )
+  // OPTIMIZATION: We already got the user from updateSession, so we don't need to create another client here.
 
-  const { data: { user } } = await supabase.auth.getUser()
 
   // If user is authenticated and trying to access /login, redirect to /dashboard
   if (user && pathname === '/login') {

@@ -11,7 +11,9 @@ export const CustomCursor: React.FC = () => {
     const cursorDot = cursorDotRef.current;
     const cursorRing = cursorRingRef.current;
 
-    if (!cursorDot || !cursorRing) return;
+    // OPTIMIZATION: Don't run this heavy logic on devices without a mouse (e.g. mobile)
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouchDevice || !cursorDot || !cursorRing) return;
 
     const onMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
@@ -115,6 +117,11 @@ export const CustomCursor: React.FC = () => {
       observer.disconnect();
     };
   }, []);
+
+  // Hide entirely on touch devices via CSS media query helper class or just return null if server-side detection was possible (but this is client component)
+  // We already handle the logic disable above. The CSS 'hidden md:block' already does a good job of hiding it visually.
+  // But let's add an explicit early return for logic if we wanted.
+  // For now, the existing CSS `hidden md:block` is sufficient to hide it, and the JS check above prevents the heavy event listeners.
 
   return (
     <>

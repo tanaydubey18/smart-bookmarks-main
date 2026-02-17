@@ -143,7 +143,7 @@ export default function LoginPage() {
             {/* Footer Text */}
             <div className="pt-4 text-center border-t border-gray-100">
               <p className="text-[11px] text-gray-400 font-medium leading-relaxed">
-                By signing in, you agree to our <span className="text-gray-900 border-b border-gray-200 hover:border-[#377CCD] cursor-pointer">Terms</span> and <span className="text-gray-900 border-b border-gray-200 hover:border-[#377CCD] cursor-pointer">Privacy</span>.
+                By continuing, you agree to our <span className="text-gray-900 border-b border-gray-200 hover:border-[#377CCD] cursor-pointer">Terms</span> and <span className="text-gray-900 border-b border-gray-200 hover:border-[#377CCD] cursor-pointer">Privacy</span>.
                 <br />
                 Your data is protected and kept private.
               </p>
