@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Twitter, Linkedin, Heart } from "lucide-react";
+import { Github, Linkedin, Heart } from "lucide-react";
 import { Logo } from "./ui/Logo";
 
 export function Footer() {
@@ -16,8 +16,7 @@ export function Footer() {
 
         <div className="flex items-center gap-4">
           <SocialLink href="https://github.com/tanaydubey18" icon={<Github className="h-4 w-4" />} label="GitHub" />
-          <SocialLink href="#" icon={<Twitter className="h-4 w-4" />} label="Twitter" />
-          <SocialLink href="#" icon={<Linkedin className="h-4 w-4" />} label="LinkedIn" />
+          <SocialLink href="https://www.linkedin.com/in/dev-tanishq18" icon={<Linkedin className="h-4 w-4" />} label="LinkedIn" />
         </div>
       </div>
     </footer>
