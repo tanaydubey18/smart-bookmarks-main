@@ -79,9 +79,14 @@ export default function HomePage() {
               </Button>
             </>
           ) : (
-            <Link href="/login">
-              <Button className="px-6">Sign Up</Button>
-            </Link>
+            <div className="flex items-center gap-2">
+              <Link href="/login">
+                <Button variant="ghost" className="font-medium">Login</Button>
+              </Link>
+              <Link href="/login">
+                <Button className="px-6">Sign Up</Button>
+              </Link>
+            </div>
           )}
         </div>
       </header>
