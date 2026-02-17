@@ -90,7 +90,7 @@ export default function HomePage() {
       <section className="relative flex flex-col items-center justify-center min-h-[85vh] pt-32 pb-20 px-4 text-center">
         {/* Isometric Grid Background (Matching the cool 404/Login vibe) */}
         <div 
-          className="absolute inset-0 z-0 pointer-events-none opacity-[0.1] overflow-hidden"
+          className="absolute inset-0 z-0 pointer-events-none opacity-[0.15] overflow-hidden"
           style={{
             perspective: "1000px",
             transformStyle: "preserve-3d",
