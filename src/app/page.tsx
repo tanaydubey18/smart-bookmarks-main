@@ -92,7 +92,7 @@ export default function HomePage() {
       </header>
       
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-[85vh] pt-24 md:pt-32 pb-20 px-6 text-center">
+      <section className="relative flex flex-col items-center justify-center min-h-[80vh] pt-16 md:pt-20 pb-20 px-6 text-center">
         {/* Isometric Grid Background */}
         <div 
           className="absolute inset-0 z-0 pointer-events-none opacity-[0.1] overflow-hidden"
