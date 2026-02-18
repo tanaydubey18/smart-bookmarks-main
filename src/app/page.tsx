@@ -61,35 +61,33 @@ export default function HomePage() {
   return (
     <main ref={container} className="min-h-screen flex flex-col bg-background text-foreground">
       {/* Header */}
-      <header className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-secondary/60 border-b border-border/30">
-        <div className="mx-auto max-w-5xl w-full flex items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-4">
-            <Logo />
-          </div>
-          <div className="flex items-center gap-3">
-            {session ? (
-              <>
-                <Link href="/dashboard">
-                  <Button variant="ghost" className="hidden sm:inline-flex gap-2 font-medium">
-                    <LayoutDashboard className="h-4 w-4" />
-                    Dashboard
-                  </Button>
-                </Link>
-                <Button onClick={handleSignOut} loading={signOutLoading} className="px-6">
-                  Sign Out
+      <header className="sticky top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-white/40 border-b border-border/30">
+        <div className="flex items-center gap-4">
+          <Logo />
+        </div>
+        <div className="flex items-center gap-3">
+          {session ? (
+            <>
+              <Link href="/dashboard">
+                <Button variant="ghost" className="hidden sm:inline-flex gap-2 font-medium">
+                  <LayoutDashboard className="h-4 w-4" />
+                  Dashboard
                 </Button>
-              </>
-            ) : (
-              <div className="flex items-center gap-2">
-                <Link href="/login">
-                  <Button variant="ghost" className="font-medium">Login</Button>
-                </Link>
-                <Link href="/login">
-                  <Button className="px-6">Sign Up</Button>
-                </Link>
-              </div>
-            )}
-          </div>
+              </Link>
+              <Button onClick={handleSignOut} loading={signOutLoading} className="px-6">
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <div className="flex items-center gap-2">
+              <Link href="/login">
+                <Button variant="ghost" className="font-medium">Login</Button>
+              </Link>
+              <Link href="/login">
+                <Button className="px-6">Sign Up</Button>
+              </Link>
+            </div>
+          )}
         </div>
       </header>
       
@@ -112,7 +110,7 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="max-w-3xl space-y-6 relative z-10">
+        <div className="max-w-3xl space-y-4 relative z-10">
             <div className="hero-element inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground shadow-sm">
               <Bookmark className="h-3.5 w-3.5 text-primary" />
               Your premium digital architect
@@ -129,7 +127,7 @@ export default function HomePage() {
              inspiration, and resources — organized with the soul of a blueprint.
             </p>
           
-            <div className="hero-element flex flex-col items-center gap-8 pt-4">
+            <div className="hero-element flex flex-col items-center gap-4 pt-2">
                 <div className="relative w-full max-w-[200px] sm:max-w-[280px] aspect-square transition-transform duration-500 hover:scale-105">
                   <Image 
                     src="/hero-illustration.png" 
