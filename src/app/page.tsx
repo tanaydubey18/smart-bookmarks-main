@@ -61,30 +61,32 @@ export default function HomePage() {
   return (
     <main ref={container} className="min-h-screen flex flex-col bg-background text-foreground">
       {/* Header */}
-      <header className="sticky top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-white/40 border-b border-border/30">
+      <header className="sticky top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 py-4 backdrop-blur-md bg-white/40 border-b border-border/30">
         <div className="flex items-center gap-4">
-          <Logo />
+          <div className="scale-90 sm:scale-100 origin-left">
+            <Logo />
+          </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {session ? (
             <>
               <Link href="/dashboard">
-                <Button variant="ghost" className="hidden sm:inline-flex gap-2 font-medium">
+                <Button variant="ghost" size="sm" className="hidden sm:inline-flex gap-2 font-medium">
                   <LayoutDashboard className="h-4 w-4" />
                   Dashboard
                 </Button>
               </Link>
-              <Button onClick={handleSignOut} loading={signOutLoading} className="px-6">
+              <Button size="sm" onClick={handleSignOut} loading={signOutLoading} className="px-6">
                 Sign Out
               </Button>
             </>
           ) : (
             <div className="flex items-center gap-2">
               <Link href="/login">
-                <Button variant="ghost" className="font-medium">Login</Button>
+                <Button variant="ghost" size="sm" className="font-medium px-3 sm:px-4">Login</Button>
               </Link>
               <Link href="/login">
-                <Button className="px-6">Sign Up</Button>
+                <Button size="sm" className="px-5 sm:px-6">Sign Up</Button>
               </Link>
             </div>
           )}
