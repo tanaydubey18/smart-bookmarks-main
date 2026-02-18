@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Patrick_Hand } from "next/font/google";
 import { Preloader } from "@/components/ui/Preloader";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const geistSans = Geist({
