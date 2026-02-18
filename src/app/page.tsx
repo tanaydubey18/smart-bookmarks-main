@@ -92,7 +92,7 @@ export default function HomePage() {
       </header>
       
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-[80vh] pt-16 md:pt-20 pb-20 px-6 text-center">
+      <section className="relative flex flex-col items-center justify-center min-h-[75vh] pt-10 md:pt-14 pb-20 px-6 text-center">
         {/* Isometric Grid Background */}
         <div 
           className="absolute inset-0 z-0 pointer-events-none opacity-[0.1] overflow-hidden"
@@ -110,7 +110,7 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="max-w-3xl space-y-8 relative z-10">
+        <div className="max-w-3xl space-y-6 relative z-10">
             <div className="hero-element inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground shadow-sm">
               <Bookmark className="h-3.5 w-3.5 text-primary" />
               Your premium digital architect
