@@ -21,6 +21,7 @@ export function Preloader() {
     const isMobile = window.matchMedia("(pointer: coarse)").matches;
     const intervalTime = isMobile ? Math.floor(Math.random() * 100) + 30 : Math.floor(Math.random() * 150) + 50;
 
+    let current = progress; // Use existing progress if available or start from where it left off
     const interval = setInterval(() => {
       // Random increment between 1 and 7
       const increment = Math.floor(Math.random() * 7) + 1;
