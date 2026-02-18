@@ -11,7 +11,7 @@ import { Button } from "./ui/Button";
  */
 export function Navbar() {
   return (
-    <header className="border-b border-border/40 bg-white/40 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
+    <header className="border-b border-border/40 bg-secondary/60 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
       <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="scale-[0.65] sm:scale-75 origin-left">
