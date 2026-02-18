@@ -15,15 +15,16 @@ export async function GET(request: Request) {
     
     if (!error) {
       const forwardedHost = request.headers.get('x-forwarded-host') 
+      const forwardedProto = request.headers.get('x-forwarded-proto') ?? 'https'
       const isLocalEnv = process.env.NODE_ENV === 'development'
       
       // Construct safer absolute URL for production mobile browsers
       if (isLocalEnv) {
         return NextResponse.redirect(`${origin}${next}`)
       } else if (forwardedHost) {
-        return NextResponse.redirect(`https://${forwardedHost}${next}`)
+        return NextResponse.redirect(`${forwardedProto}://${forwardedHost}${next}`)
       } else {
-        // Fallback to origin but ensure it's HTTPS if not local
+        // Fallback to origin but ensure it's secure
         const secureOrigin = origin.replace('http://', 'https://')
         return NextResponse.redirect(`${secureOrigin}${next}`)
       }
