@@ -18,7 +18,9 @@ export function Preloader() {
       return;
     }
 
-    let current = 0;
+    const isMobile = window.matchMedia("(pointer: coarse)").matches;
+    const intervalTime = isMobile ? Math.floor(Math.random() * 100) + 30 : Math.floor(Math.random() * 150) + 50;
+
     const interval = setInterval(() => {
       // Random increment between 1 and 7
       const increment = Math.floor(Math.random() * 7) + 1;
@@ -52,7 +54,7 @@ export function Preloader() {
           ease: "power4.inOut"
         });
       }
-    }, Math.floor(Math.random() * 150) + 50); // Random delay for more natural feel
+    }, intervalTime); // Optimized delay for mobile
 
     return () => clearInterval(interval);
   }, []);

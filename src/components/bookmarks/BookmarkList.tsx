@@ -79,25 +79,25 @@ export function BookmarkList({ bookmarks, onOptimisticRemove }: BookmarkListProp
       {bookmarks.map((bookmark) => (
         <li key={bookmark.id} id={`bookmark-${bookmark.id}`} className="opacity-0">
           <Card className="bookmark-card group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-colors hover:border-primary/20 hover:bg-card">
-            <div className="flex items-center justify-between p-4">
+            <div className="flex items-center justify-between p-3 sm:p-4">
               <div className="min-w-0 flex-1">
                 <a
                   href={bookmark.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 font-medium text-foreground transition-colors hover:text-primary"
+                  className="flex items-center gap-2 font-semibold text-foreground transition-colors hover:text-primary leading-tight"
                 >
-                  <span className="truncate">{bookmark.title}</span>
-                  <ExternalLink className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <span className="truncate block">{bookmark.title}</span>
+                  <ExternalLink className="h-3 w-3 shrink-0 opacity-0 transition-opacity group-hover:opacity-100 hidden sm:block" />
                 </a>
-                <p className="mt-1 truncate text-xs text-muted-foreground">
+                <p className="mt-1 truncate text-[10px] sm:text-xs text-muted-foreground opacity-60 break-all">
                   {bookmark.url}
                 </p>
               </div>
               <Button
                 variant="ghost"
                 size="icon"
-                className="ml-4 h-8 w-8 text-muted-foreground opacity-0 hover:text-destructive group-hover:opacity-100"
+                className="ml-2 sm:ml-4 h-8 w-8 text-muted-foreground/60 hover:text-destructive hover:bg-destructive/5 sm:opacity-0 sm:group-hover:opacity-100 shrink-0"
                 onClick={() => handleDelete(bookmark.id)}
                 loading={deletingId === bookmark.id}
               >

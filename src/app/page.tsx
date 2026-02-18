@@ -92,10 +92,10 @@ export default function HomePage() {
       </header>
       
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-[85vh] pt-32 pb-20 px-4 text-center">
-        {/* Isometric Grid Background (Matching the cool 404/Login vibe) */}
+      <section className="relative flex flex-col items-center justify-center min-h-[85vh] pt-24 md:pt-32 pb-20 px-6 text-center">
+        {/* Isometric Grid Background */}
         <div 
-          className="absolute inset-0 z-0 pointer-events-none opacity-[0.15] overflow-hidden"
+          className="absolute inset-0 z-0 pointer-events-none opacity-[0.1] overflow-hidden"
           style={{
             perspective: "1000px",
             transformStyle: "preserve-3d",
@@ -105,43 +105,45 @@ export default function HomePage() {
             className="bg-grid absolute inset-[-100%] w-[200%] h-[200%]"
             style={{
               transform: "rotateX(35deg) rotateZ(-10deg) skewX(5deg)",
-              backgroundSize: "80px 80px"
+              backgroundSize: "60px 60px"
             }}
           />
         </div>
 
         <div className="max-w-3xl space-y-8 relative z-10">
-            <div className="hero-element inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground shadow-sm">
+            <div className="hero-element inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-muted-foreground shadow-sm">
               <Bookmark className="h-3.5 w-3.5 text-primary" />
               Your premium digital architect
             </div>
             
-            <h1 className="hero-element text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+            <h1 className="hero-element text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.1] text-balance">
                 Save what matters.
                 <br />
                 <span className="text-primary font-serif italic">Find it instantly.</span>
             </h1>
             
-            <p className="hero-element mx-auto max-w-xl text-lg text-muted-foreground leading-relaxed">
+            <p className="hero-element mx-auto max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed px-4">
              A clean, private space for your bookmarks. Save articles, 
              inspiration, and resources — organized with the soul of a blueprint.
             </p>
           
-            <div className="hero-element flex flex-col items-center gap-6 pt-4">
-                <div className="relative w-full max-w-[280px] aspect-square opacity-100 hover:scale-105 transition-transform duration-500">
+            <div className="hero-element flex flex-col items-center gap-8 pt-4">
+                <div className="relative w-full max-w-[200px] sm:max-w-[280px] aspect-square transition-transform duration-500 hover:scale-105">
                   <Image 
                     src="/hero-illustration.png" 
-                    alt="Group of people celebrating" 
+                    alt="Hero illustration" 
                     fill 
                     className="object-contain"
                   />
                 </div>
-                <Link href={session ? "/dashboard" : "/login"}>
-                  <Button size="lg" className="h-14 px-10 text-lg shadow-xl hover:shadow-primary/20 transition-all group">
-                      {session ? "Getting Started" : "Start Exploring"}
-                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                  <Link href={session ? "/dashboard" : "/login"} className="w-full sm:w-auto">
+                    <Button size="lg" className="h-14 w-full sm:w-auto px-10 text-lg shadow-xl hover:shadow-primary/20 transition-all group">
+                        {session ? "Getting Started" : "Start Exploring"}
+                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </Link>
+                </div>
             </div>
         </div>
       </section>
