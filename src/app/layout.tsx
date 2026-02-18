@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Patrick_Hand } from "next/font/google";
-import { SmoothScroll } from "@/components/ui/SmoothScroll";
-import { CustomCursor } from "@/components/ui/CustomCursor";
+import { Preloader } from "@/components/ui/Preloader";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,6 +35,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${patrickHand.variable} antialiased`}
         suppressHydrationWarning
       >
+        <Preloader />
         <CustomCursor />
         <SmoothScroll />
         {children}
